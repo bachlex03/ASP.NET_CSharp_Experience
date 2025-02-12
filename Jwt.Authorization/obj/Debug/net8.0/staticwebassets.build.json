@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "KWtOfJpVz748Uh7FkiZpayc5ivRuHXNZA7B3GORhRHE=",
+  "Source": "Jwt.Authorization",
+  "BasePath": "_content/Jwt.Authorization",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
