@@ -1,0 +1,40 @@
+name: dockercompose9970381492017811391
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:24.0.3
+    networks:
+      default: null
+  keycloak.api:
+    build:
+      context: D:\Backend\C#\ASP.NET_CSharp_Experience
+      dockerfile: Keycloak.IdentityServer/Keycloak.Api/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+    image: keycloakapi
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\BALE\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\BALE\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: dockercompose9970381492017811391_default

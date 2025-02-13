@@ -42,3 +42,4 @@ D:\Backend\C#\ASP.NET_CSharp_Experience\Jwt.Authorization\obj\Debug\net8.0\refin
 D:\Backend\C#\ASP.NET_CSharp_Experience\Jwt.Authorization\obj\Debug\net8.0\Jwt.Authorization.pdb
 D:\Backend\C#\ASP.NET_CSharp_Experience\Jwt.Authorization\obj\Debug\net8.0\Jwt.Authorization.genruntimeconfig.cache
 D:\Backend\C#\ASP.NET_CSharp_Experience\Jwt.Authorization\obj\Debug\net8.0\ref\Jwt.Authorization.dll
+D:\Backend\C#\ASP.NET_CSharp_Experience\Jwt.Authorization\obj\Debug\net8.0\Jwt.Authorization.sourcelink.json

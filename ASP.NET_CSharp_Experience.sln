@@ -5,6 +5,12 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jwt.Authorization", "Jwt.Authorization\Jwt.Authorization.csproj", "{3CD17CF0-1389-4FCA-AB8E-49321E0288BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingBlocks.Shared", "BuildingBlocks.Shared\BuildingBlocks.Shared.csproj", "{A4838D4E-D9E4-4B44-8822-80A11FAF0E30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keycloak.Api", "Keycloak.IdentityServer\Keycloak.Api\Keycloak.Api.csproj", "{A32DF2A0-98C7-40BA-BA3F-A27FE7969208}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C67E0943-5198-4B56-A8AF-5B831E2844AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{3CD17CF0-1389-4FCA-AB8E-49321E0288BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CD17CF0-1389-4FCA-AB8E-49321E0288BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CD17CF0-1389-4FCA-AB8E-49321E0288BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4838D4E-D9E4-4B44-8822-80A11FAF0E30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4838D4E-D9E4-4B44-8822-80A11FAF0E30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4838D4E-D9E4-4B44-8822-80A11FAF0E30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4838D4E-D9E4-4B44-8822-80A11FAF0E30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A32DF2A0-98C7-40BA-BA3F-A27FE7969208}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A32DF2A0-98C7-40BA-BA3F-A27FE7969208}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A32DF2A0-98C7-40BA-BA3F-A27FE7969208}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A32DF2A0-98C7-40BA-BA3F-A27FE7969208}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C67E0943-5198-4B56-A8AF-5B831E2844AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C67E0943-5198-4B56-A8AF-5B831E2844AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C67E0943-5198-4B56-A8AF-5B831E2844AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C67E0943-5198-4B56-A8AF-5B831E2844AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

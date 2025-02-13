@@ -1,0 +1,12 @@
+D:\Backend\C#\ASP.NET_CSharp_Experience\BuildingBlocks.Shared\bin\Debug\net8.0\BuildingBlocks.Shared.deps.json
+D:\Backend\C#\ASP.NET_CSharp_Experience\BuildingBlocks.Shared\bin\Debug\net8.0\BuildingBlocks.Shared.dll
+D:\Backend\C#\ASP.NET_CSharp_Experience\BuildingBlocks.Shared\bin\Debug\net8.0\BuildingBlocks.Shared.pdb
+D:\Backend\C#\ASP.NET_CSharp_Experience\BuildingBlocks.Shared\obj\Debug\net8.0\BuildingBlocks.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\Backend\C#\ASP.NET_CSharp_Experience\BuildingBlocks.Shared\obj\Debug\net8.0\BuildingBlocks.Shared.AssemblyInfoInputs.cache
+D:\Backend\C#\ASP.NET_CSharp_Experience\BuildingBlocks.Shared\obj\Debug\net8.0\BuildingBlocks.Shared.AssemblyInfo.cs
+D:\Backend\C#\ASP.NET_CSharp_Experience\BuildingBlocks.Shared\obj\Debug\net8.0\BuildingBlocks.Shared.csproj.CoreCompileInputs.cache
+D:\Backend\C#\ASP.NET_CSharp_Experience\BuildingBlocks.Shared\obj\Debug\net8.0\BuildingBlocks.Shared.sourcelink.json
+D:\Backend\C#\ASP.NET_CSharp_Experience\BuildingBlocks.Shared\obj\Debug\net8.0\BuildingBlocks.Shared.dll
+D:\Backend\C#\ASP.NET_CSharp_Experience\BuildingBlocks.Shared\obj\Debug\net8.0\refint\BuildingBlocks.Shared.dll
+D:\Backend\C#\ASP.NET_CSharp_Experience\BuildingBlocks.Shared\obj\Debug\net8.0\BuildingBlocks.Shared.pdb
+D:\Backend\C#\ASP.NET_CSharp_Experience\BuildingBlocks.Shared\obj\Debug\net8.0\ref\BuildingBlocks.Shared.dll

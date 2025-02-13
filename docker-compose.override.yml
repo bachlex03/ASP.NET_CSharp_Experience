@@ -1,0 +1,31 @@
+services:
+  keycloak.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081
+    ports:
+      - "8080"
+      - "8081"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+
+  keycloak.server:
+      container_name: keycloak.server
+      command:
+          [
+              'start-dev',
+              '--import-realm',
+              '--log-level=DEBUG,org.hibernate:info,org.keycloak.transaction.JtaTransactionWrapper:info,org.keycloak.services.scheduled.ScheduledTaskRunner:info',
+              '--log-console-color=true'
+          ]
+      environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+      - KC_HEALTH_ENABLED=true
+      restart: always
+      volumes:
+      - ./Keycloak.IdentityServer/KeycloakConfiguration/:/opt/keycloak/data/import/
+      ports:
+      - "8080:8080"
