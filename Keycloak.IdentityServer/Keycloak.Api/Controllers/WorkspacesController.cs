@@ -1,4 +1,4 @@
-﻿using Keycloak.Api.Services;
+﻿//using Keycloak.Api.Services;
 using Keycloak.AuthServices.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NSwag.Annotations;
@@ -13,11 +13,18 @@ namespace Keycloak.Api.Controllers;
 [ProtectedResource("workspaces")]
 public class WorkspacesController : ControllerBase
 {
-    private readonly WorkspaceService _workspaceService;
+    #region v1
+    //private readonly WorkspaceService _workspaceService;
 
-    public WorkspacesController(WorkspaceService workspaceService)
+    //public WorkspacesController(WorkspaceService workspaceService)
+    //{
+    //    _workspaceService = workspaceService;
+    //}
+    #endregion v1
+
+    public WorkspacesController()
     {
-        _workspaceService = workspaceService;
+
     }
 
     [HttpGet(Name = nameof(GetWorkspacesAsync))]
@@ -25,7 +32,7 @@ public class WorkspacesController : ControllerBase
     [ProtectedResource("workspaces", "workspace:list")]
     public async Task<ActionResult<IEnumerable<string>>> GetWorkspacesAsync()
     {
-            var workspaces = await _workspaceService.ListWorkspacesAsync();
+            //var workspaces = await _workspaceService.ListWorkspacesAsync();
         //try
         //{
         //}
