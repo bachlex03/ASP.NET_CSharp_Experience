@@ -4,6 +4,15 @@ services:
     build:
       context: .
       dockerfile: Keycloak.IdentityServer/Keycloak.Api/Dockerfile
+      
+  identitydb:
+    image: postgres:alpine
 
   keycloak.server:
     image: quay.io/keycloak/keycloak:24.0.3
+
+  keycloak.server.byhand:
+    image: quay.io/keycloak/keycloak:latest
+
+volumes:
+  postgres_identity:

@@ -1,0 +1,84 @@
+name: dockercompose9970381492017811391
+services:
+  identitydb:
+    container_name: identitydb
+    environment:
+      POSTGRES_DB: IdentityDb
+      POSTGRES_PASSWORD: bale
+      POSTGRES_USER: bale
+    image: postgres:alpine
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 5432
+        published: "5432"
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: volume
+        source: postgres_identity
+        target: /var/lib/postgresql/data
+        volume: {}
+  keycloak.server:
+    command:
+      - start-dev
+      - --import-realm
+      - --log-level=DEBUG,org.hibernate:info,org.keycloak.transaction.JtaTransactionWrapper:info,org.keycloak.services.scheduled.ScheduledTaskRunner:info
+      - --log-console-color=true
+    container_name: keycloak.server
+    environment:
+      KC_HEALTH_ENABLED: "true"
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    image: quay.io/keycloak/keycloak:24.0.3
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        published: "8080"
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: D:\Backend\C#\ASP.NET_CSharp_Experience\Keycloak.IdentityServer\KeycloakConfiguration
+        target: /opt/keycloak/data/import
+        bind:
+          create_host_path: true
+  keycloak.server.byhand:
+    command:
+      - start-dev
+      - --import-realm
+      - --log-level=DEBUG,org.hibernate:info,org.keycloak.transaction.JtaTransactionWrapper:info,org.keycloak.services.scheduled.ScheduledTaskRunner:info
+      - --log-console-color=true
+    container_name: keycloak.server.byhand
+    environment:
+      KC_DB: postgres
+      KC_DB_PASSWORD: bale
+      KC_DB_URL: jdbc:postgresql://identitydb:5432/IdentityDb
+      KC_DB_USERNAME: bale
+      KC_HEALTH_ENABLED: "true"
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    image: quay.io/keycloak/keycloak:latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        published: "17070"
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: D:\Backend\C#\ASP.NET_CSharp_Experience\Keycloak.IdentityServer\KeycloakConfiguration
+        target: /opt/keycloak/data/import
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: dockercompose9970381492017811391_default
+volumes:
+  postgres_identity:
+    name: dockercompose9970381492017811391_postgres_identity

@@ -26,7 +26,7 @@ public static class SwaggerExtensions
                 new OpenApiSecurityScheme
                 {
                     Type = OpenApiSecuritySchemeType.OpenIdConnect,
-                    OpenIdConnectUrl = "http://localhost:8080/realms/Test/.well-known/openid-configuration",
+                    OpenIdConnectUrl = "http://localhost:17070/realms/ygz-test/.well-known/openid-configuration",
                 }
             );
 
