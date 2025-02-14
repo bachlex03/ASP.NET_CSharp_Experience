@@ -14,5 +14,8 @@ services:
   keycloak.server.byhand:
     image: quay.io/keycloak/keycloak:latest
 
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+
 volumes:
   postgres_identity:

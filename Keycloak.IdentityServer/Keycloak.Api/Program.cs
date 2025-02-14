@@ -6,6 +6,9 @@ using Keycloak.AuthServices.Common;
 using Keycloak.AuthServices.Sdk;
 using Keycloak.AuthServices.Sdk.Kiota;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using OpenTelemetry;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Trace;
 using KeycloakAdminClientOptions = Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +19,22 @@ services.AddProblemDetails();
 services.AddApplicationSwagger();
 
 builder.Services.ConfigureHttpClientDefaults(http => http.AddStandardResilienceHandler());
+
+services
+    .AddOpenTelemetry()
+    .WithMetrics(metrics =>
+        metrics
+            .AddAspNetCoreInstrumentation()
+            .AddHttpClientInstrumentation()
+            .AddKeycloakAuthServicesInstrumentation()
+    )
+    .WithTracing(tracing =>
+        tracing
+            .AddAspNetCoreInstrumentation()
+            .AddHttpClientInstrumentation()
+            .AddKeycloakAuthServicesInstrumentation()
+    )
+    .UseOtlpExporter();
 
 // Add services to the container.
 services.AddControllers(options => options.AddProtectedResources());

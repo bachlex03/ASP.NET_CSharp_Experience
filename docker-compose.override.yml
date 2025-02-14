@@ -4,6 +4,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
       - ASPNETCORE_HTTPS_PORTS=8081
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4317
     ports:
       - "8080"
       - "8081"
@@ -20,7 +21,7 @@ services:
     - POSTGRES_DB=IdentityDb
     restart: always
     ports:
-    - "5432:5432"
+    - "6432:5432"
     volumes:
     - postgres_identity:/var/lib/postgresql/data/
 
@@ -67,6 +68,13 @@ services:
       # - ./Keycloak.IdentityServer/KeycloakConfiguration/:/opt/keycloak/data/import/
       ports:
       - "17070:8080"
+
+  jaeger:
+      container_name: jaeger
+      ports:
+      - "4317:4317"
+      - "4318:4318" 
+      - "16686:16686"
 
 volumes:
   postgres_identity:

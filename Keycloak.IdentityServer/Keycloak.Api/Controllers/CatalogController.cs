@@ -16,15 +16,6 @@ public class CatalogController : ControllerBase
     [ProtectedResource("catalogs", "catalog:list")]
     public async Task<ActionResult<IEnumerable<string>>> GetProductsAsync()
     {
-        //var workspaces = await _workspaceService.ListWorkspacesAsync();
-        //try
-        //{
-        //}
-        //catch(Exception ex)
-        //{
-        //    Console.WriteLine(ex.Message);
-        //}
-
         return Ok("GetProductsAsync");
     }
 }
