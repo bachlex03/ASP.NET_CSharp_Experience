@@ -17,5 +17,12 @@ services:
   jaeger:
     image: jaegertracing/all-in-one:latest
 
+  keycloak.gateway:
+    image: ${DOCKER_REGISTRY-}keycloakgateway
+    build:
+      context: .
+      dockerfile: Keycloak.Gateway/Dockerfile
+
 volumes:
   postgres_identity:
+

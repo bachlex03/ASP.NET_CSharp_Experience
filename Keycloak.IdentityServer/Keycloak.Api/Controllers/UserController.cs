@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace JWT.Authentication.Authorization.Controllers;
 
 //[Authorize]
-[ApiController]
-[Route("[controller]")]
+[ApiController()]
+[Route("users")]
 public class UserController : ControllerBase
 {
     [HttpGet("read")]

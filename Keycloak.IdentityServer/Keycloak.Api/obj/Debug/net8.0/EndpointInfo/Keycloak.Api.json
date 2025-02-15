@@ -6,7 +6,7 @@
     "version": "1.0.0"
   },
   "paths": {
-    "/User/read": {
+    "/users/read": {
       "get": {
         "tags": [
           "User"
@@ -35,7 +35,7 @@
         ]
       }
     },
-    "/User/create": {
+    "/users/create": {
       "post": {
         "tags": [
           "User"
@@ -64,7 +64,7 @@
         ]
       }
     },
-    "/User/update": {
+    "/users/update": {
       "put": {
         "tags": [
           "User"
@@ -93,7 +93,7 @@
         ]
       }
     },
-    "/User/delete": {
+    "/users/delete": {
       "delete": {
         "tags": [
           "User"

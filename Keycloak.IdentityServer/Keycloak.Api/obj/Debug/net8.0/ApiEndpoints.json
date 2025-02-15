@@ -23,7 +23,7 @@
   {
     "ContainingType": "JWT.Authentication.Authorization.Controllers.UserController",
     "Method": "Create",
-    "RelativePath": "User/create",
+    "RelativePath": "users/create",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -33,7 +33,7 @@
   {
     "ContainingType": "JWT.Authentication.Authorization.Controllers.UserController",
     "Method": "Delete",
-    "RelativePath": "User/delete",
+    "RelativePath": "users/delete",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -43,7 +43,7 @@
   {
     "ContainingType": "JWT.Authentication.Authorization.Controllers.UserController",
     "Method": "Read",
-    "RelativePath": "User/read",
+    "RelativePath": "users/read",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -53,7 +53,7 @@
   {
     "ContainingType": "JWT.Authentication.Authorization.Controllers.UserController",
     "Method": "Update",
-    "RelativePath": "User/update",
+    "RelativePath": "users/update",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,

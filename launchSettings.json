@@ -4,7 +4,8 @@
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
       "serviceActions": {
-        "keycloak.api": "StartDebugging"
+        "keycloak.api": "StartDebugging",
+        "keycloak.gateway": "StartDebugging"
       }
     }
   }

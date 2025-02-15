@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "XLK0u1zORh6a1cugaE4cva7idd1IWNTlZcLqsQDpSxA=",
+  "Source": "Keycloak.Gateway",
+  "BasePath": "_content/Keycloak.Gateway",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
