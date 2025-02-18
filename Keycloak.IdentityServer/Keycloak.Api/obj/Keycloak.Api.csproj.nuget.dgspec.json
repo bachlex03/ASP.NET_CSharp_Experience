@@ -50,6 +50,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Keycloak.AuthServices.Authentication": {
+              "target": "Package",
+              "version": "[2.5.3, )"
+            },
+            "Keycloak.AuthServices.Authorization": {
+              "target": "Package",
+              "version": "[2.5.5, )"
+            },
             "Keycloak.AuthServices.OpenTelemetry": {
               "target": "Package",
               "version": "[1.0.0, )"
@@ -144,18 +152,6 @@
             "Duende.AccessTokenManagement": {
               "target": "Package",
               "version": "[3.1.1, )"
-            },
-            "Keycloak.AuthServices.Authentication": {
-              "target": "Package",
-              "version": "[2.5.3, )"
-            },
-            "Keycloak.AuthServices.Authorization": {
-              "target": "Package",
-              "version": "[2.5.5, )"
-            },
-            "Keycloak.AuthServices.OpenTelemetry": {
-              "target": "Package",
-              "version": "[1.0.0, )"
             },
             "Keycloak.AuthServices.Sdk": {
               "target": "Package",
