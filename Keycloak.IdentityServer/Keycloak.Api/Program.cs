@@ -1,22 +1,26 @@
 using Keycloak.Api.Extensions;
-//using Keycloak.Api.Services;
 using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Authorization;
-using Keycloak.AuthServices.Common;
-using Keycloak.AuthServices.Sdk;
-using Keycloak.AuthServices.Sdk.Kiota;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Logging;
 using OpenTelemetry;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
-using KeycloakAdminClientOptions = Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions;
 
 var builder = WebApplication.CreateBuilder(args);
+IdentityModelEventSource.ShowPII = true;
 
 var services = builder.Services;
 
 services.AddProblemDetails();
 services.AddApplicationSwagger();
+
+builder.Logging.AddOpenTelemetry(logging =>
+{
+    logging.IncludeFormattedMessage = true;
+    logging.IncludeScopes = true;
+});
+
 
 builder.Services.ConfigureHttpClientDefaults(http => http.AddStandardResilienceHandler());
 

@@ -1,0 +1,145 @@
+name: dockercompose9970381492017811391
+services:
+  identitydb:
+    container_name: identitydb
+    environment:
+      POSTGRES_DB: IdentityDb
+      POSTGRES_PASSWORD: bale
+      POSTGRES_USER: bale
+    image: postgres:alpine
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 5432
+        published: "6432"
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: volume
+        source: postgres_identity
+        target: /var/lib/postgresql/data
+        volume: {}
+  jaeger:
+    container_name: jaeger
+    image: jaegertracing/all-in-one:latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 4317
+        published: "4317"
+        protocol: tcp
+      - mode: ingress
+        target: 4318
+        published: "4318"
+        protocol: tcp
+      - mode: ingress
+        target: 16686
+        published: "16686"
+        protocol: tcp
+  keycloak.api:
+    build:
+      context: D:\Backend\C#\ASP.NET_CSharp_Experience
+      dockerfile: Keycloak.IdentityServer/Keycloak.Api/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://localhost:4317
+    image: keycloakapi
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        published: "6002"
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        published: "6062"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\BALE\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\BALE\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+  keycloak.gateway:
+    build:
+      context: D:\Backend\C#\ASP.NET_CSharp_Experience
+      dockerfile: Keycloak.Gateway/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+    image: keycloakgateway
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        published: "6001"
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        published: "6061"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\BALE\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\BALE\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+  keycloak.server:
+    image: quay.io/keycloak/keycloak:24.0.3
+    networks:
+      default: null
+  keycloak.server.byhand:
+    command:
+      - start-dev
+      - --import-realm
+      - --log-level=DEBUG,org.hibernate:info,org.keycloak.transaction.JtaTransactionWrapper:info,org.keycloak.services.scheduled.ScheduledTaskRunner:info
+      - --log-console-color=true
+    container_name: keycloak.server.byhand
+    depends_on:
+      identitydb:
+        condition: service_started
+        required: true
+    environment:
+      KC_DB: postgres
+      KC_DB_PASSWORD: bale
+      KC_DB_URL: jdbc:postgresql://identitydb:5432/IdentityDb
+      KC_DB_USERNAME: bale
+      KC_HEALTH_ENABLED: "true"
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    image: quay.io/keycloak/keycloak:latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        published: "17070"
+        protocol: tcp
+    restart: always
+networks:
+  default:
+    name: dockercompose9970381492017811391_default
+volumes:
+  postgres_identity:
+    name: dockercompose9970381492017811391_postgres_identity

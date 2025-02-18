@@ -8,7 +8,6 @@ D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Keycloak.Api.staticwebassets.e
 D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Keycloak.Api.exe
 D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Keycloak.Api.dll
 D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Keycloak.AuthServices.Sdk.Kiota.dll
 D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Microsoft.Extensions.Http.dll
 D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\NSwag.AspNetCore.dll
 D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Keycloak.AuthServices.Common.dll
@@ -21,12 +20,6 @@ D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Microsoft.Extensions.Http.Resi
 D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Microsoft.Extensions.Options.dll
 D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\NSwag.Generation.dll
 D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\NSwag.Core.dll
-D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Microsoft.Kiota.Abstractions.dll
-D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Microsoft.Kiota.Serialization.Json.dll
-D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Microsoft.Kiota.Serialization.Text.dll
-D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Microsoft.Kiota.Serialization.Form.dll
-D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Microsoft.Kiota.Serialization.Multipart.dll
-D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Microsoft.Kiota.Http.HttpClientLibrary.dll
 D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Microsoft.Extensions.Logging.dll
 D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Microsoft.Extensions.Diagnostics.dll
 D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Newtonsoft.Json.dll
@@ -47,7 +40,6 @@ D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Polly.RateLimiting.dll
 D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Microsoft.Extensions.Telemetry.Abstractions.dll
 D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Microsoft.Extensions.ObjectPool.dll
 D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Microsoft.Extensions.Http.Diagnostics.dll
-D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Std.UriTemplate.dll
 D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
 D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Microsoft.Extensions.Diagnostics.Abstractions.dll
 D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\YamlDotNet.dll
@@ -85,3 +77,5 @@ D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Grpc.Net.Common.dll
 D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Keycloak.Gateway.pdb
 D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Yarp.ReverseProxy.dll
 D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\System.IO.Hashing.dll
+D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\Backend\C#\ASP.NET_CSharp_Experience\bin\Debug\Microsoft.IdentityModel.Abstractions.dll

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Keycloak.Gateway")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+749c516565783475325072f60bde59a261ba4818")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+821f8c163d0f7443c61846697b49158f50c1f42b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Keycloak.Gateway")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Keycloak.Gateway")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

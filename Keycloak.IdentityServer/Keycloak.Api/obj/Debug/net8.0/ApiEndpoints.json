@@ -2,7 +2,7 @@
   {
     "ContainingType": "Keycloak.Api.Controllers.CatalogController",
     "Method": "GetProductsAsync",
-    "RelativePath": "catalogs",
+    "RelativePath": "catalogs/products",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -17,8 +17,7 @@
         ],
         "StatusCode": 200
       }
-    ],
-    "EndpointName": "GetProductsAsync"
+    ]
   },
   {
     "ContainingType": "JWT.Authentication.Authorization.Controllers.UserController",
@@ -35,6 +34,16 @@
     "Method": "Delete",
     "RelativePath": "users/delete",
     "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "JWT.Authentication.Authorization.Controllers.UserController",
+    "Method": "GetProfile",
+    "RelativePath": "users/profile",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
@@ -59,27 +68,6 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Keycloak.Api.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Keycloak.Api.WeatherForecast, Keycloak.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ],
-    "EndpointName": "GetWeatherForecast"
   },
   {
     "ContainingType": "Keycloak.Api.Controllers.WorkspacesController",

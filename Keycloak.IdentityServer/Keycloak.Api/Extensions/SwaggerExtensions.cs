@@ -1,10 +1,13 @@
-﻿using Keycloak.AuthServices.Common;
+﻿using Keycloak.AuthServices.Authentication;
+using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using NSwag;
 using NSwag.AspNetCore;
 using NSwag.Generation.Processors.Security;
+using KeycloakAuthenticationOptionss = Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions;
 
 namespace Keycloak.Api.Extensions;
 
@@ -16,7 +19,10 @@ public static class SwaggerExtensions
 
         services.AddOpenApiDocument((document, sp) =>
         {
-            var keycloakOptions = sp.GetRequiredService<IOptionsMonitor<KeycloakAuthenticationOptions>>()?.Get(JwtBearerDefaults.AuthenticationScheme)!;
+            var keycloakOptions = sp.GetRequiredService<
+                        IOptionsMonitor<KeycloakAuthenticationOptionss>
+                    >()
+                    ?.Get(JwtBearerDefaults.AuthenticationScheme)!;
 
             document.Title = "Keycloak API";
 
@@ -40,40 +46,6 @@ public static class SwaggerExtensions
                     BearerFormat = "JWT",
                 }
             );
-
-            //document.AddSecurity(
-            //    "Keycloak",
-            //    [],
-            //    new OpenApiSecurityScheme
-            //    {
-            //        Type = OpenApiSecuritySchemeType.OAuth2,
-            //        Flows = new OpenApiOAuthFlows
-            //        {
-            //            Implicit = new OpenApiOAuthFlow
-            //            {
-            //                AuthorizationUrl = $"http://localhost:8080/realms/Test/protocol/openid-connect/auth",
-            //                Scopes = new Dictionary<string, string>
-            //                {
-            //                    { "openid", "openid" },
-            //                    { "profile", "profile" },
-            //                    { "email", "email" },
-            //                    { "roles", "roles" },
-            //                },
-            //            },
-            //            Password = new OpenApiOAuthFlow
-            //            {
-            //                TokenUrl = $"http://localhost:8080/realms/Test/protocol/openid-connect/token",
-            //                Scopes = new Dictionary<string, string>
-            //                {
-            //                    { "openid", "openid" },
-            //                    { "profile", "profile" },
-            //                    { "email", "email" },
-            //                    { "roles", "roles" },
-            //                },
-            //            }
-            //        }
-            //    }
-            //);
 
             document.OperationProcessors.Add(new OperationSecurityScopeProcessor(OpenIdConnectDefaults.AuthenticationScheme));
             document.OperationProcessors.Add(new OperationSecurityScopeProcessor(JwtBearerDefaults.AuthenticationScheme));

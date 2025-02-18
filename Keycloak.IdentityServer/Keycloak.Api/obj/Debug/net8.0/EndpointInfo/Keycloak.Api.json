@@ -6,10 +6,40 @@
     "version": "1.0.0"
   },
   "paths": {
+    "/users/profile": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "[user:profile]",
+        "operationId": "User_GetProfile",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OpenIdConnect": []
+          },
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
     "/users/read": {
       "get": {
         "tags": [
-          "User"
+          "users"
         ],
         "operationId": "User_Read",
         "responses": {
@@ -38,7 +68,7 @@
     "/users/create": {
       "post": {
         "tags": [
-          "User"
+          "users"
         ],
         "operationId": "User_Create",
         "responses": {
@@ -67,7 +97,7 @@
     "/users/update": {
       "put": {
         "tags": [
-          "User"
+          "users"
         ],
         "operationId": "User_Update",
         "responses": {
@@ -96,7 +126,7 @@
     "/users/delete": {
       "delete": {
         "tags": [
-          "User"
+          "users"
         ],
         "operationId": "User_Delete",
         "responses": {
@@ -122,12 +152,11 @@
         ]
       }
     },
-    "/catalogs": {
+    "/catalogs/products": {
       "get": {
         "tags": [
           "catalogs"
         ],
-        "summary": "[catalog:list]",
         "operationId": "Catalog_GetProducts",
         "responses": {
           "200": {
@@ -138,37 +167,6 @@
                   "type": "array",
                   "items": {
                     "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "OpenIdConnect": []
-          },
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
-    "/WeatherForecast": {
-      "get": {
-        "tags": [
-          "WeatherForecast"
-        ],
-        "operationId": "WeatherForecast_Get",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
                   }
                 }
               }
@@ -219,30 +217,6 @@
     }
   },
   "components": {
-    "schemas": {
-      "WeatherForecast": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "date": {
-            "type": "string",
-            "format": "date"
-          },
-          "temperatureC": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "temperatureF": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "summary": {
-            "type": "string",
-            "nullable": true
-          }
-        }
-      }
-    },
     "securitySchemes": {
       "OpenIdConnect": {
         "type": "openIdConnect",
@@ -264,6 +238,10 @@
     }
   ],
   "tags": [
+    {
+      "name": "users",
+      "description": "Manage users."
+    },
     {
       "name": "catalogs",
       "description": "Manage catalogs."

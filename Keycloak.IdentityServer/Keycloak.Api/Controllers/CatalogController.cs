@@ -1,4 +1,5 @@
 ﻿using Keycloak.AuthServices.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NSwag.Annotations;
 
@@ -11,11 +12,14 @@ namespace Keycloak.Api.Controllers;
 public class CatalogController : ControllerBase
 {
 
-    [HttpGet(Name = nameof(GetProductsAsync))]
-    [OpenApiOperation("[catalog:list]", "")]
-    [ProtectedResource("catalogs", "catalog:list")]
+    [HttpGet("products")]
+    //[OpenApiOperation("[catalog:list]", "")]
+    [AllowAnonymous]
+    //[OpenApiIgnore]
     public async Task<ActionResult<IEnumerable<string>>> GetProductsAsync()
     {
+        await Task.CompletedTask;
+
         return Ok("GetProductsAsync");
     }
 }
