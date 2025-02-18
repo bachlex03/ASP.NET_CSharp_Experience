@@ -1,11 +1,13 @@
-using Keycloak.Api.Extensions;
 using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+
 using Microsoft.IdentityModel.Logging;
 using OpenTelemetry;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
+
+using Keycloak.Api.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 IdentityModelEventSource.ShowPII = true;

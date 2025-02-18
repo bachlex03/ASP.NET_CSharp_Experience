@@ -10,3 +10,4 @@ D:\Backend\C#\ASP.NET_CSharp_Experience\BuildingBlocks.Shared\obj\Debug\net8.0\B
 D:\Backend\C#\ASP.NET_CSharp_Experience\BuildingBlocks.Shared\obj\Debug\net8.0\refint\BuildingBlocks.Shared.dll
 D:\Backend\C#\ASP.NET_CSharp_Experience\BuildingBlocks.Shared\obj\Debug\net8.0\BuildingBlocks.Shared.pdb
 D:\Backend\C#\ASP.NET_CSharp_Experience\BuildingBlocks.Shared\obj\Debug\net8.0\ref\BuildingBlocks.Shared.dll
+D:\Backend\C#\ASP.NET_CSharp_Experience\BuildingBlocks.Shared\obj\Debug\net8.0\BuildingBlocks.Shared.csproj.AssemblyReference.cache

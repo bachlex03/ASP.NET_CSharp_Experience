@@ -18,16 +18,17 @@
     <PackageReference Include="Keycloak.AuthServices.OpenTelemetry" Version="1.0.0" />
     <PackageReference Include="Keycloak.AuthServices.Sdk" Version="2.5.5" />
     <PackageReference Include="Keycloak.AuthServices.Sdk.Kiota" Version="26.0.5" />
+	  
     <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="9.2.0" />
 	  
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
     <PackageReference Include="NSwag.AspNetCore" Version="14.2.0" />
-    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.9.0" />
-    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.9.0" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.9.0" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.9.0" />
 	  
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\BuildingBlocks.Shared\BuildingBlocks.Shared.csproj" />
   </ItemGroup>
 
 </Project>

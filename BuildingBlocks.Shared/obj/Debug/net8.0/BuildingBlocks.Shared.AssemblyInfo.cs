@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BuildingBlocks.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+749c516565783475325072f60bde59a261ba4818")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b5a71b565819ff6a1cd21d03f58305fe44be85a5")]
 [assembly: System.Reflection.AssemblyProductAttribute("BuildingBlocks.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BuildingBlocks.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

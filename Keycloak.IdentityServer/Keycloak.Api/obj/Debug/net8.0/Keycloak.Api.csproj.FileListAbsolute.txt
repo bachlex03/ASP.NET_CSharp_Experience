@@ -113,3 +113,5 @@ D:\Backend\C#\ASP.NET_CSharp_Experience\Keycloak.IdentityServer\Keycloak.Api\bin
 D:\Backend\C#\ASP.NET_CSharp_Experience\Keycloak.IdentityServer\Keycloak.Api\bin\Debug\net8.0\OpenTelemetry.Extensions.Hosting.dll
 D:\Backend\C#\ASP.NET_CSharp_Experience\Keycloak.IdentityServer\Keycloak.Api\bin\Debug\net8.0\OpenTelemetry.Instrumentation.AspNetCore.dll
 D:\Backend\C#\ASP.NET_CSharp_Experience\Keycloak.IdentityServer\Keycloak.Api\bin\Debug\net8.0\OpenTelemetry.Instrumentation.Http.dll
+D:\Backend\C#\ASP.NET_CSharp_Experience\Keycloak.IdentityServer\Keycloak.Api\bin\Debug\net8.0\BuildingBlocks.Shared.dll
+D:\Backend\C#\ASP.NET_CSharp_Experience\Keycloak.IdentityServer\Keycloak.Api\bin\Debug\net8.0\BuildingBlocks.Shared.pdb

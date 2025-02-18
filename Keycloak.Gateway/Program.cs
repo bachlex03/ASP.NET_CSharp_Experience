@@ -2,6 +2,10 @@ using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
+using OpenTelemetry;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Trace;
+
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
@@ -9,7 +13,29 @@ var services = builder.Services;
 builder.Services.AddReverseProxy()
                 .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
 
+builder.Logging.AddOpenTelemetry(logging =>
+{
+    logging.IncludeFormattedMessage = true;
+    logging.IncludeScopes = true;
+});
+
 builder.Services.ConfigureHttpClientDefaults(http => http.AddStandardResilienceHandler());
+
+services
+    .AddOpenTelemetry()
+    .WithMetrics(metrics =>
+        metrics
+            .AddAspNetCoreInstrumentation()
+            .AddHttpClientInstrumentation()
+            .AddKeycloakAuthServicesInstrumentation()
+    )
+    .WithTracing(tracing =>
+        tracing
+            .AddAspNetCoreInstrumentation()
+            .AddHttpClientInstrumentation()
+            .AddKeycloakAuthServicesInstrumentation()
+    )
+    .UseOtlpExporter();
 
 services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
