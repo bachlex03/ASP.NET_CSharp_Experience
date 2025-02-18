@@ -8,13 +8,13 @@ services:
   identitydb:
     image: postgres:alpine
 
-  keycloak.server:
-    image: quay.io/keycloak/keycloak:24.0.3
+  # keycloak.server:
+  #   image: quay.io/keycloak/keycloak:24.0.3
 
   keycloak.server.byhand:
     image: quay.io/keycloak/keycloak:latest
 
-  jaeger:
+  jaeger.open.telemetry:
     image: jaegertracing/all-in-one:latest
 
   keycloak.gateway:

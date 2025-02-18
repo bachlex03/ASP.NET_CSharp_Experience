@@ -11,19 +11,12 @@ services:
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
 
-  keycloak.api:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_HTTP_PORTS=8080
-      - ASPNETCORE_HTTPS_PORTS=8081
-      - OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4317
-      - Keycloak__auth-server-url=http://keycloak.server.byhand:8080
-    ports:
-      - "6002:8080"
-      - "6062:8081"
-    volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
-      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+  jaeger.open.telemetry:
+      container_name: jaeger.open.telemetry
+      ports:
+      - "4317:4317"
+      - "4318:4318" 
+      - "16686:16686"
 
   identitydb:
     image: postgres:alpine
@@ -38,25 +31,40 @@ services:
     volumes:
     - postgres_identity:/var/lib/postgresql/data/
 
-  keycloak.server:
-      container_name: keycloak.server
-      command:
-          [
-              'start-dev',
-              '--import-realm',
-              '--log-level=DEBUG,org.hibernate:info,org.keycloak.transaction.JtaTransactionWrapper:info,org.keycloak.services.scheduled.ScheduledTaskRunner:info',
-              '--log-console-color=true',
-              '--hostname=keycloak.server'
-          ]
-      environment:
-      - KEYCLOAK_ADMIN=admin
-      - KEYCLOAK_ADMIN_PASSWORD=admin
-      - KC_HEALTH_ENABLED=true
-      restart: always
-      volumes:
-      - ./Keycloak.IdentityServer/KeycloakConfiguration/:/opt/keycloak/data/import/
-      ports:
-      - "8080:8080"
+  keycloak.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://jaeger.open.telemetry:4317
+      - Keycloak__auth-server-url=http://keycloak.server.byhand:8080
+    ports:
+      - "6002:8080"
+      - "6062:8081"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+
+
+  # keycloak.server:
+  #     container_name: keycloak.server
+  #     command:
+  #         [
+  #             'start-dev',
+  #             '--import-realm',
+  #             '--log-level=DEBUG,org.hibernate:info,org.keycloak.transaction.JtaTransactionWrapper:info,org.keycloak.services.scheduled.ScheduledTaskRunner:info',
+  #             '--log-console-color=true',
+  #             '--hostname=keycloak.server'
+  #         ]
+  #     environment:
+  #     - KEYCLOAK_ADMIN=admin
+  #     - KEYCLOAK_ADMIN_PASSWORD=admin
+  #     - KC_HEALTH_ENABLED=true
+  #     restart: always
+  #     volumes:
+  #     - ./Keycloak.IdentityServer/KeycloakConfiguration/:/opt/keycloak/data/import/
+  #     ports:
+  #     - "8080:8080"
 
   keycloak.server.byhand:
       container_name: keycloak.server.byhand
@@ -86,12 +94,6 @@ services:
       ports:
       - "17070:8080"
 
-  jaeger:
-      container_name: jaeger
-      ports:
-      - "4317:4317"
-      - "4318:4318" 
-      - "16686:16686"
 
 volumes:
   postgres_identity:
