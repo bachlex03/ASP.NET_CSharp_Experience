@@ -6,152 +6,6 @@
     "version": "1.0.0"
   },
   "paths": {
-    "/users/profile": {
-      "get": {
-        "tags": [
-          "users"
-        ],
-        "summary": "[user:profile]",
-        "operationId": "User_GetProfile",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/octet-stream": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "OpenIdConnect": []
-          },
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
-    "/users/read": {
-      "get": {
-        "tags": [
-          "users"
-        ],
-        "operationId": "User_Read",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/octet-stream": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "OpenIdConnect": []
-          },
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
-    "/users/create": {
-      "post": {
-        "tags": [
-          "users"
-        ],
-        "operationId": "User_Create",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/octet-stream": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "OpenIdConnect": []
-          },
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
-    "/users/update": {
-      "put": {
-        "tags": [
-          "users"
-        ],
-        "operationId": "User_Update",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/octet-stream": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "OpenIdConnect": []
-          },
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
-    "/users/delete": {
-      "delete": {
-        "tags": [
-          "users"
-        ],
-        "operationId": "User_Delete",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/octet-stream": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "OpenIdConnect": []
-          },
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
     "/catalogs/products": {
       "get": {
         "tags": [
@@ -214,6 +68,65 @@
           }
         ]
       }
+    },
+    "/auth/sign-in": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "operationId": "Auth_SignIn",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OpenIdConnect": []
+          },
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/users/profile": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "[user:profile]",
+        "operationId": "User_GetProfile",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OpenIdConnect": []
+          },
+          {
+            "Bearer": []
+          }
+        ]
+      }
     }
   },
   "components": {
@@ -239,16 +152,20 @@
   ],
   "tags": [
     {
-      "name": "users",
-      "description": "Manage users."
-    },
-    {
       "name": "catalogs",
       "description": "Manage catalogs."
     },
     {
       "name": "Workspaces",
       "description": "Manage workspaces."
+    },
+    {
+      "name": "Auth",
+      "description": "Authentication."
+    },
+    {
+      "name": "users",
+      "description": "Manage users."
     }
   ]
 }

@@ -1,5 +1,15 @@
 [
   {
+    "ContainingType": "JWT.Authentication.Authorization.Controllers.AuthController",
+    "Method": "SignIn",
+    "RelativePath": "auth/sign-in",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Keycloak.Api.Controllers.CatalogController",
     "Method": "GetProductsAsync",
     "RelativePath": "catalogs/products",
@@ -21,49 +31,9 @@
   },
   {
     "ContainingType": "JWT.Authentication.Authorization.Controllers.UserController",
-    "Method": "Create",
-    "RelativePath": "users/create",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "JWT.Authentication.Authorization.Controllers.UserController",
-    "Method": "Delete",
-    "RelativePath": "users/delete",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "JWT.Authentication.Authorization.Controllers.UserController",
     "Method": "GetProfile",
     "RelativePath": "users/profile",
     "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "JWT.Authentication.Authorization.Controllers.UserController",
-    "Method": "Read",
-    "RelativePath": "users/read",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "JWT.Authentication.Authorization.Controllers.UserController",
-    "Method": "Update",
-    "RelativePath": "users/update",
-    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [],

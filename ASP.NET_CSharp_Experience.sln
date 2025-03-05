@@ -13,6 +13,8 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keycloak.Gateway", "Keycloak.Gateway\Keycloak.Gateway.csproj", "{D611BC28-AA65-4393-9AF9-A62EE9C0D0C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB.Mongo", "DB.Mongo\DB.Mongo.csproj", "{B413141C-E68D-43CA-B605-BD3BD6AA41B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{D611BC28-AA65-4393-9AF9-A62EE9C0D0C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D611BC28-AA65-4393-9AF9-A62EE9C0D0C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D611BC28-AA65-4393-9AF9-A62EE9C0D0C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B413141C-E68D-43CA-B605-BD3BD6AA41B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B413141C-E68D-43CA-B605-BD3BD6AA41B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B413141C-E68D-43CA-B605-BD3BD6AA41B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B413141C-E68D-43CA-B605-BD3BD6AA41B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

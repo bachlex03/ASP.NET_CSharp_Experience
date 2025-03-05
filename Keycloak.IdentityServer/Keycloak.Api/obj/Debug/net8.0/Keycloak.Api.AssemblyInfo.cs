@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Keycloak.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e699436973c36531bb5909aad4486e8c9308188")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e1d511bd245bdbb2fd68f1bcade07c15f6db40e7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Keycloak.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Keycloak.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

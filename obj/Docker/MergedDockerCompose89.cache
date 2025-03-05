@@ -1,0 +1,65 @@
+name: dockercompose9970381492017811391
+services:
+  db.catalog:
+    container_name: db.catalog
+    environment:
+      MONGO_INITDB_DATABASE: CatalogDb
+      MONGO_INITDB_ROOT_PASSWORD: bale
+      MONGO_INITDB_ROOT_USERNAME: bale
+    image: mongo:latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 27017
+        published: "37017"
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: volume
+        source: mongodb_catalog
+        target: /data/db
+        volume: {}
+      - type: bind
+        source: D:\Backend\C#\ASP.NET_CSharp_Experience\mongodb\init-mongo.js
+        target: /docker-entrypoint-initdb.d/init-mongo.js
+        bind:
+          create_host_path: true
+  db.mongo.api:
+    build:
+      context: D:\Backend\C#\ASP.NET_CSharp_Experience
+      dockerfile: DB.Mongo/Dockerfile
+    container_name: db.mongo.api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+    image: dbmongo
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\BALE\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\BALE\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: dockercompose9970381492017811391_default
+volumes:
+  mongodb_catalog:
+    name: dockercompose9970381492017811391_mongodb_catalog

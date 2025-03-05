@@ -1,28 +1,40 @@
 services:
-  keycloak.api:
-    image: ${DOCKER_REGISTRY-}keycloakapi
+  db.catalog:
+    image: mongo:latest
+
+  db.mongo.api:
+    image: ${DOCKER_REGISTRY-}dbmongo
     build:
       context: .
-      dockerfile: Keycloak.IdentityServer/Keycloak.Api/Dockerfile
-      
-  identitydb:
-    image: postgres:alpine
+      dockerfile: DB.Mongo/Dockerfile
 
+  # identitydb:
+  #   image: postgres:alpine
+
+  # keycloak.api:
+  #   image: ${DOCKER_REGISTRY-}keycloakapi
+  #   build:
+  #     context: .
+  #     dockerfile: Keycloak.IdentityServer/Keycloak.Api/Dockerfile
+      
   # keycloak.server:
   #   image: quay.io/keycloak/keycloak:24.0.3
 
-  keycloak.server.byhand:
-    image: quay.io/keycloak/keycloak:latest
+  # keycloak.server.byhand:
+  #   image: quay.io/keycloak/keycloak:latest
 
-  jaeger.open.telemetry:
-    image: jaegertracing/all-in-one:latest
+  # jaeger.open.telemetry:
+  #   image: jaegertracing/all-in-one:latest
 
-  keycloak.gateway:
-    image: ${DOCKER_REGISTRY-}keycloakgateway
-    build:
-      context: .
-      dockerfile: Keycloak.Gateway/Dockerfile
+  # keycloak.gateway:
+  #   image: ${DOCKER_REGISTRY-}keycloakgateway
+  #   build:
+  #     context: .
+  #     dockerfile: Keycloak.Gateway/Dockerfile
+
+  
 
 volumes:
   postgres_identity:
+
 
